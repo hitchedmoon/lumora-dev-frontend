@@ -1,41 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LE Security</title>
 
   <style>
+    /* Grund-Layout */
     body {
       margin: 0;
+      padding: 0;
       background: #000;
       color: #fff;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      
+      /* Flexbox für vertikale Ausrichtung */
       display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
       flex-direction: column;
-      overflow: hidden;
+      align-items: center; /* Zentriert die Bilder horizontal */
+      
+      /* Erlaubt das Scrollen */
+      min-height: 100vh;
+      overflow-y: auto;
+      overflow-x: hidden;
     }
 
-    img {
-      max-width: 75%;
-      height: auto;
-    }
-
-    footer {
-      position: fixed;
-      bottom: 20px;
+    /* Container für die Inhalte (verhindert das Kleben am Rand) */
+    .content-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px 100px 20px; /* Platz für den Footer lassen */
       width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* Styling der Bilder */
+    img {
+      max-width: 80%;
+      height: auto;
+      margin-bottom: 40px; /* Abstand zwischen den Bildern */
+      border: 1px solid #333; /* Optional: Leichter Rahmen */
+      transition: transform 0.3s ease;
+    }
+
+    img:hover {
+      transform: scale(1.02); /* Kleiner Effekt beim Drüberfahren */
+    }
+
+    /* Footer Styling */
+    footer {
+      width: 100%;
+      padding: 20px 0;
+      background: rgba(0, 0, 0, 0.8);
       text-align: center;
       font-size: 14px;
       opacity: 0.75;
+      border-top: 1px solid #222;
+      margin-top: auto; /* Schiebt Footer ans Ende */
     }
 
     a {
       color: #c9a63b;
       text-decoration: none;
+      font-weight: bold;
     }
 
     a:hover {
@@ -45,9 +73,16 @@
 </head>
 
 <body>
-  <img src="logo.png" alt="LE Security Logo">
-  <img src="logo2.png" alt="LE JDKLJFLKDJFLK">
-  <img src="logo3.png" alt="fjkldsfjsdkljfklds">
+
+  <div class="content-wrapper">
+    <img src="logo.png" alt="LE Security Logo">
+    <img src="logo2.png" alt="Beschreibung Logo 2">
+    <img src="logo3.png" alt="Beschreibung Logo 3">
+  </div>
+
+  <footer>
+    <p>&copy; 2024 LE Security | <a href="#">Impressum</a> | <a href="#">Kontakt</a></p>
+  </footer>
+
 </body>
 </html>
-
